@@ -19,5 +19,10 @@
 - [x] Squarespace DNS設定の解説
   - [x] Walkthroughに詳細な手順を追記
   - [x] ユーザーへの完了報告
-- [x] アカウント名修正（takeg -> kuma3mccm）
 - [x] .gitignore への docs 追加
+- [x] DNS トラブルシューティング（ネームサーバーの確認）
+  - [x] スクリーンショットの警告箇所の解説
+  - [x] ネームサーバー切り替え手順の案内
+- [x] Cloudflare DNS設定の解説
+  - [x] Walkthroughに詳細な手順を追記
+  - [x] ユーザーへの完了報告
