@@ -27,6 +27,6 @@
 - [x] HTTPS 有効化手順の解説
   - [x] 証明書発行待ちと Enforce HTTPS の説明
   - [x] Cloudflare での注意点（Proxy設定）の追記
-- [x] Cloudflare DNS設定の解説
-  - [x] Walkthroughに詳細な手順を追記
-  - [x] ユーザーへの完了報告
+- [x] Firebase Authentication 設定の修正
+  - [x] Sign-in method (Google) の有効化案内
+  - [x] Authorized domains へのドメイン追加案内
