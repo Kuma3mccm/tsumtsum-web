@@ -1,0 +1,525 @@
+.stats-page {
+    max-width: 840px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.stats-page__content {
+    padding: 0 24px;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.stats-page__empty {
+    padding: 48px 24px;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* セクション */
+.stats-section {
+    margin-bottom: 80px;
+}
+
+.stats-section--compact {
+    margin-bottom: 24px;
+}
+
+.stats-section__title {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: #999;
+    margin: 0 0 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    text-align: center;
+}
+
+.stats-section__goal {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0 0 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.stats-section__today {
+    margin-top: 8px;
+    font-size: 0.875rem;
+    color: #666;
+    font-weight: 500;
+    text-align: center;
+}
+
+.stats-section__today--done {
+    color: #059669;
+}
+
+.stats-section__target {
+    margin-top: 6px;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: #999;
+    text-align: center;
+}
+
+.stats-section__toggle {
+    background: transparent;
+    border: 1px solid #ECECEC;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #666;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.stats-section__toggle:hover {
+    background: #fafafa;
+    border-color: #ddd;
+}
+
+.stats-section__toggle:focus {
+    outline: 2px solid #059669;
+    outline-offset: 2px;
+}
+
+.stats-section__toggle--under {
+    display: block;
+    margin: 16px auto 0;
+}
+
+/* シンプルカード（現在のコイン、今月の合計用） */
+.stats-simple-card {
+    text-align: center;
+    padding: 32px 16px;
+    border-bottom: 1px solid #ECECEC;
+}
+
+.stats-simple-card__label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #999;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+}
+
+.stats-simple-card__value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 統計カード */
+.stats-card {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    border: none;
+}
+
+.chart-container {
+    width: 100%;
+    height: 220px;
+    padding: 16px 0;
+}
+
+.chart-container { position: relative; }
+.chart-sparkles { position: absolute; inset: 0; pointer-events: none; }
+.chart-sparkle { position: absolute; width: 14px; height: 14px; transform: translate(-50%, -50%); }
+
+.pie-chart-container {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 0;
+}
+
+/* 合計統計 */
+.total-stats {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px 24px;
+    padding: 24px 0;
+}
+
+.total-stat {
+    text-align: center;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+}
+
+.total-stat__label {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    color: #999;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: block;
+}
+
+.total-stat__value {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    display: block;
+}
+
+.total-stat--earned .total-stat__value {
+    color: #111;
+}
+
+.total-stat--premium .total-stat__value,
+.total-stat--other .total-stat__value,
+.total-stat--serebo .total-stat__value,
+.total-stat--pick .total-stat__value {
+    color: #dc2626;
+}
+
+/* 期間統計テーブル */
+.period-stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0;
+}
+
+.period-stats-table th,
+.period-stats-table td {
+    padding: 18px 12px;
+    text-align: right;
+    font-size: 0.875rem;
+}
+
+.period-stats-table th {
+    font-weight: 500;
+    color: #999;
+    border-bottom: 1px solid #ECECEC;
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.period-stats-table th:first-child,
+.period-stats-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+}
+
+.period-stats-table td {
+    color: #111;
+    font-weight: 600;
+    border-bottom: 1px solid #f8f8f8;
+    font-variant-numeric: tabular-nums;
+}
+
+.period-stats-table tbody tr:hover {
+    background: #fafafa;
+}
+
+.period-stats-table__earned {
+    color: #111 !important;
+}
+
+.period-stats-table__premium,
+.period-stats-table__other,
+.period-stats-table__serebo,
+.period-stats-table__pick {
+    color: #dc2626 !important;
+}
+
+/* エクスポート/インポート */
+.data-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 8px 0;
+}
+
+.data-button {
+    flex: 0 0 auto;
+    min-width: 140px;
+    padding: 12px 24px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid #ECECEC;
+}
+
+.data-button--export {
+    background: transparent;
+    color: #111;
+}
+
+.data-button--export:hover {
+    background: #fafafa;
+}
+
+.data-button--import {
+    background: transparent;
+    color: #666;
+}
+
+.data-button--import:hover {
+    background: #fafafa;
+}
+
+.data-button:focus {
+    outline: 2px solid #059669;
+    outline-offset: 2px;
+}
+
+.data-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+.hidden-input {
+    display: none;
+}
+
+/* メッセージ */
+.stats-message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    margin: 24px 24px 0;
+    border: 1px solid;
+}
+
+.stats-message--success {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #15803d;
+}
+
+.stats-message--error {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #dc2626;
+}
+
+/* 空の状態 */
+.empty-state {
+    text-align: center;
+    padding: 48px 20px;
+    color: #999;
+    font-size: 0.875rem;
+}
+
+.empty-state__icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 16px;
+    stroke: #ddd;
+}
+
+.empty-state__text {
+    font-size: 0.875rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* 目標と負債 */
+.stats-section__debt {
+    text-align: center;
+    padding: 16px;
+}
+
+/* 今週の進捗（リボン型プログレス） */
+.weekly-progress {
+    padding: 16px;
+}
+.weekly-progress__summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+.weekly-progress__value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111;
+}
+.weekly-progress__rate {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #059669;
+}
+.weekly-progress__bar {
+    position: relative;
+    height: 28px;
+    background: linear-gradient(90deg,#f3f4f6,#f8fafc);
+    border-radius: 14px;
+    overflow: hidden;
+}
+.weekly-progress__fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(90deg,#10b981,#059669);
+    border-radius: 14px 0 0 14px;
+    transition: width 0.5s ease;
+}
+.weekly-progress__marker {
+    position: absolute;
+    top: -6px;
+    width: 2px;
+    height: 40px;
+    transform: translateX(-50%);
+}
+.weekly-progress__marker--primary {
+    background: #16a34a;
+}
+.weekly-progress__marker--secondary {
+    background: #D4AF37;
+}
+.weekly-progress__info {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+    .stats-page__content {
+        padding: 0 16px;
+    }
+
+    .stats-section {
+        margin-bottom: 64px;
+    }
+
+    .stats-section--compact {
+        margin-bottom: 16px;
+    }
+
+    .stats-simple-card {
+        padding: 24px 16px;
+    }
+
+    .stats-simple-card__value {
+        font-size: 1.75rem;
+    }
+
+    .total-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px 24px;
+    }
+
+    .total-stat:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .total-stat__value {
+        font-size: 1.5rem;
+    }
+
+    .period-stats-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .period-stats-table th,
+    .period-stats-table td {
+        padding: 14px 10px;
+        font-size: 0.8125rem;
+        white-space: nowrap;
+    }
+
+    .chart-container {
+        height: 200px;
+    }
+
+    .pie-chart-container {
+        height: 240px;
+    }
+
+    .stats-message {
+        margin: 16px 16px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-page__content {
+        padding: 0 8px;
+    }
+
+    .stats-simple-card__value {
+        font-size: 1.5rem;
+    }
+
+    .total-stat__value {
+        font-size: 1.25rem;
+    }
+
+    .data-button {
+        min-width: 120px;
+        padding: 10px 20px;
+        font-size: 0.75rem;
+    }
+}
+
+/* キラキラ（目標達成時のパーティクル） */
+.goal-with-sparkles {
+    position: relative;
+    display: inline-block;
+}
+
+.sparkles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: visible;
+}
+
+.sparkle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    transform: translateY(0) scale(0.8) rotate(0deg);
+    animation: sparkle 1400ms ease-in-out infinite;
+}
+
+.sparkle svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@keyframes sparkle {
+    0% { opacity: 0; transform: translateY(0) scale(0.6) rotate(0deg); }
+    12% { opacity: 1; transform: translateY(-6px) scale(1.05) rotate(15deg); }
+    60% { opacity: 0.9; transform: translateY(-16px) scale(1) rotate(30deg); }
+    100% { opacity: 0; transform: translateY(-28px) scale(0.6) rotate(60deg); }
+}
+
+/* 位置と遅延のパターン（6個に調整） */
+.sparkle--1 { left: 14%; top: 62%; animation-delay: 0ms; }
+.sparkle--2 { left: 30%; top: 64%; animation-delay: 120ms; }
+.sparkle--3 { left: 44%; top: 58%; animation-delay: 240ms; }
+.sparkle--4 { left: 56%; top: 60%; animation-delay: 80ms; }
+.sparkle--5 { left: 70%; top: 64%; animation-delay: 200ms; }
+.sparkle--6 { left: 84%; top: 58%; animation-delay: 320ms; }

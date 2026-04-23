@@ -1,0 +1,169 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout__main {
+  flex: 1;
+  padding: 16px 8px;
+  padding-bottom: 160px; /* leave room for wallet tabbar + global tabbar */
+}
+
+/* PC Header */
+.header {
+  display: none;
+  background: #fff;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 0 24px;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.header__nav {
+  display: flex;
+  gap: 8px;
+}
+
+.header__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #999;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.header__link:hover {
+  background: #fafafa;
+  color: #111;
+}
+
+.header__link--active {
+  background: #f5f5f5;
+  color: #111;
+}
+
+.header__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.settings-button {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.settings-button:hover { background: #fafafa; }
+
+/* Mobile fixed settings button (top-right) */
+.settings-button--mobile {
+  position: fixed;
+  top: calc(12px + env(safe-area-inset-top));
+  right: 12px;
+  z-index: 500;
+  background: #fafafa;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.settings-button--mobile:hover { background: #f5f5f5; }
+
+@media (min-width: 768px) {
+  .settings-button--mobile { display: none; }
+}
+
+/* Mobile Tab Bar */
+.tabbar {
+  display: flex;
+  position: fixed;
+  bottom: 64px; /* sit above global tabbar on mobile */
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  padding: 8px 0;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+  z-index: 100;
+}
+
+.tabbar__link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  text-decoration: none;
+  color: #bbb;
+  transition: all 0.2s ease;
+}
+
+/* Make the same styles apply to buttons using this class */
+.tabbar__link[type="button"] {
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.tabbar__link--active {
+  color: #111;
+}
+
+.tabbar__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.tabbar__label {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Desktop: Show header, hide tabbar */
+@media (min-width: 768px) {
+  .header {
+    display: block;
+  }
+
+  .tabbar {
+    display: none;
+  }
+
+  .layout__main {
+    padding: 32px 24px;
+    padding-bottom: 32px;
+  }
+}
