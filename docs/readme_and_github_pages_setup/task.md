@@ -15,8 +15,9 @@
 - [x] デプロイ自動化設定 (GitHub Actions)
   - [x] `.github/workflows/deploy.yml` の作成
 - [x] 最終確認
-- [/] カスタムドメイン（www.kuma3mccm.com）対応
-  - [ ] `vite.config.ts` の `base` パスをルートに変更
-  - [ ] `public/CNAME` ファイルの作成
-  - [ ] README.md と各ドキュメントのURL更新
-  - [ ] `walkthrough.md` の更新
+- [x] カスタムドメイン（www.kuma3mccm.com）対応
+- [x] Squarespace DNS設定の解説
+  - [x] Walkthroughに詳細な手順を追記
+  - [x] ユーザーへの完了報告
+- [x] アカウント名修正（takeg -> kuma3mccm）
+- [x] .gitignore への docs 追加
