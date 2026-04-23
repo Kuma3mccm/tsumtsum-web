@@ -1,0 +1,18 @@
+# タスクリスト - README修正とGitHub Pages公開設定
+
+- [x] ドキュメント構成の準備
+  - [x] 既存コードの調査
+  - [x] `task.md` の作成
+  - [x] `implementation_plan.md` の作成
+- [x] README.md の刷新
+  - [x] プロジェクト概要の記述
+  - [x] 主要機能（CPM, Wallet, Skill Tracker）の説明追加
+  - [x] 技術スタックの明記
+  - [x] プレミアムなデザイン（バッジ、見出し構成）の適用
+- [x] GitHub Pages 公開設定
+  - [x] `vite.config.ts` に `base` パスを設定
+  - [x] PWA設定の調整（`start_url` など）
+- [x] デプロイ自動化設定 (GitHub Actions)
+  - [x] `.github/workflows/deploy.yml` の作成
+- [x] 最終確認
+  - [x] `walkthrough.md` の作成

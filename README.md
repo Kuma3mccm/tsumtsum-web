@@ -1,73 +1,77 @@
-# React + TypeScript + Vite
+# TSUM TSUM UTILITIES 📱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://takeg.github.io/tsumtsum-web/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF.svg)](https://vitejs.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6.svg)](https://www.typescriptlang.org/)
 
-Currently, two official plugins are available:
+**TSUM TSUM UTILITIES** は、LINE：ディズニー ツムツムのプレイをより楽しく、効率的にするための非公式攻略ツール集です。
+PWA（Progressive Web App）に対応しており、スマートフォンにインストールしてネイティブアプリのように利用することも可能です。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 主要機能
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 1. CPM Calculator (コイン効率計算)
 
-## Expanding the ESLint configuration
+- プレイ時間と獲得コイン数から **CPM (Coins Per Minute)** を自動計算。
+- どのツムが最も効率よくコインを稼げるかを一目で把握できます。
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2. Coin Wallet (コイン管理)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 日々の獲得コイン数や使用コイン数をスマートに管理。
+- 収支レポートを作成し、貯金目標の達成をサポートします。
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 3. Skill Progress Tracker (スキル進捗管理)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- 所有しているツムのスキルレベルと進捗を管理。
+- 次のスキルアップに必要なコイン数やアイテム数を一括で確認できます。
+- OCR機能（Tesseract.js）による読み取り補助も搭載。
+
+---
+
+## 🛠 技術スタック
+
+- **Frontend:** React 19, Vite, TypeScript
+- **State Management:** React Hooks
+- **Database/Auth:** Firebase (Sync 連携)
+- **Visualization:** Chart.js
+- **OCR:** Tesseract.js
+- **PWA:** Vite PWA Plugin
+- **Styling:** Vanilla CSS (Modern CSS)
+
+---
+
+## 📦 インストールと実行
+
+```bash
+# リポジトリのクローン
+git clone https://github.com/takeg/tsumtsum-web.git
+
+# 依存関係のインストール
+cd tsumtsum-web
+npm install
+
+# 開発サーバーの起動
+npm run dev
+
+# ビルド
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🌐 公開先
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+GitHub Pages: [https://takeg.github.io/tsumtsum-web/](https://takeg.github.io/tsumtsum-web/)
+
+---
+
+## 📄 ライセンス
+
+このプロジェクトは MIT ライセンスの下で公開されています。
+
+---
+
+_Disclaimer: このツールはファンによる非公式のプロジェクトであり、LINE株式会社、株式会社ミクシィ、またはウォルト・ディズニー・カンパニーとは一切関係ありません。_
