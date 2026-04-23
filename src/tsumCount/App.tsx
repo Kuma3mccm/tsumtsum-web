@@ -122,7 +122,7 @@ type CropImageResult = {
 };
 
 const TESSERACT_WORKER_PATH = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/worker.min.js';
-const TESSERACT_LANG_PATH = 'https://tessdata.projectnaptha.com/5';
+const TESSERACT_LANG_PATH = 'https://tessdata.projectnaptha.com/4.0.0_best';
 const TESSERACT_CORE_PATH = 'https://cdn.jsdelivr.net/npm/tesseract.js-core@5/tesseract-core.wasm.js';
 
 function getMaxLevel(needs: number[]): number {
