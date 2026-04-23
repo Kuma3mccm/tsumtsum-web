@@ -87,6 +87,7 @@ export default function Layout() {
                         <NavLink
                             to="/"
                             className="header__link"
+                            reloadDocument
                         >
                             <HomeIcon className="header__icon" />
                             ホーム
@@ -133,6 +134,7 @@ export default function Layout() {
                 <NavLink
                     to="/"
                     className="tabbar__link"
+                    reloadDocument
                 >
                     <HomeIcon className="tabbar__icon" />
                     <span className="tabbar__label">ホーム</span>

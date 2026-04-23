@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import './Layout.css';
 
 const NAV_ITEMS = [
@@ -10,6 +10,8 @@ const NAV_ITEMS = [
 ];
 
 export default function Layout() {
+  const location = useLocation();
+
   return (
     <div className="app-shell">
       <header className="app-header">
@@ -31,7 +33,7 @@ export default function Layout() {
       </header>
 
       <main className="app-main">
-        <Outlet />
+        <Outlet key={location.pathname} />
       </main>
 
       <nav className="app-tabbar" aria-label="Mobile navigation">
