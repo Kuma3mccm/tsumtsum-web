@@ -127,6 +127,36 @@ Squarespace で DNS を一括管理したい場合は、ネームサーバー設
 
 ---
 
+## ページが真っ白になる場合 (Firebase 設定エラー)
+
+「Missing Firebase config: VITE_FIREBASE_APIKEY」というエラーが表示されてページが表示されない場合、GitHub 上で Firebase の設定値を登録する必要があります。
+
+### 原因
+
+Vite はビルド時に環境変数（`VITE_` で始まるもの）をコード内に埋め込みますが、GitHub Actions のビルド環境にはその値が存在しないため、エラーが発生しています。
+
+### 解決策：GitHub Secrets への登録
+
+以下の手順で、GitHub の管理画面に Firebase の設定値を登録してください。
+
+1. [Firebase Console](https://console.firebase.google.com/) にアクセスし、プロジェクトを選択します。
+2. 左メニュー上部の **歯車アイコン** > **プロジェクトの設定** を開きます。
+3. **全般** タブの下部にある「マイアプリ」セクションで、対象のウェブアプリを確認します。
+4. 「SDKの設定と構成」で **「npm を使用する」** を選択すると表示される `const firebaseConfig = { ... };` の中の値をメモします。
+   - `apiKey`, `authDomain`, `projectId`, `storageBucket`, `messagingSenderId`, `appId`
+5. GitHub リポジトリの **Settings** > **Secrets and variables** > **Actions** に移動します。
+6. **New repository secret** ボタンを押し、以下の名称で値を一つずつ登録します：
+   - **Name:** `VITE_FIREBASE_APIKEY` / **Value:** (あなたのAPIキー)
+   - **Name:** `VITE_FIREBASE_AUTHDOMAIN` / **Value:** (authDomainの値)
+   - **Name:** `VITE_FIREBASE_PROJECTID` / **Value:** (projectIdの値)
+   - **Name:** `VITE_FIREBASE_STORAGEBUCKET` / **Value:** (storageBucketの値)
+   - **Name:** `VITE_FIREBASE_MESSAGINGSENDERID` / **Value:** (messagingSenderIdの値)
+   - **Name:** `VITE_FIREBASE_APPID` / **Value:** (appIdの値)
+
+7. 登録完了後、`main` ブランチへ再度プッシュ（または Actions からデプロイを再実行）してください。これにより、ビルド時に値が注入され、エラーが解消されます。
+
+---
+
 ## 動作確認ツール
 
 設定が反映されているか、以下のサイトで確認できます：

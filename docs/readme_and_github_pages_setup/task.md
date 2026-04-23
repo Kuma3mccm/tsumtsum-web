@@ -23,6 +23,10 @@
 - [x] DNS トラブルシューティング（ネームサーバーの確認）
   - [x] スクリーンショットの警告箇所の解説
   - [x] ネームサーバー切り替え手順の案内
+- [x] Firebase 環境変数の設定とエラー修正
+- [x] HTTPS 有効化手順の解説
+  - [x] 証明書発行待ちと Enforce HTTPS の説明
+  - [x] Cloudflare での注意点（Proxy設定）の追記
 - [x] Cloudflare DNS設定の解説
   - [x] Walkthroughに詳細な手順を追記
   - [x] ユーザーへの完了報告
