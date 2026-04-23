@@ -30,6 +30,8 @@
 - [x] Firebase Authentication 設定の修正
   - [x] Sign-in method (Google) の有効化案内
   - [x] Authorized domains へのドメイン追加案内
+- [x] Firestore同期エラーの調査と解決策の提示
+  - [x] Walkthroughへの対処手順追記（広告ブロック・DB作成）
 - [x] OCRエラーの調査と修正
   - [x] Tesseract.js 言語データパスの修正 (404対策)
   - [x] 詳しい使い方ガイドの作成 (Walkthrough追記)
