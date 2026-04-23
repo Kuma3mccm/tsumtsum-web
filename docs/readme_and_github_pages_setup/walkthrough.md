@@ -10,26 +10,33 @@ tsumtsum-web の README をプロジェクト専用のものに刷新し、GitHu
 - 各機能（CPM計算機、コインウォレット、スキル進捗管理）の解説を追加しました。
 - プレミアムな印象を与えるため、各種バッジやアイコンを配置しました。
 
-### 2. GitHub Pages 公開設定 (`vite.config.ts`)
+### 2. カスタムドメイン対応 (`www.kuma3mccm.com`)
 
-- リポジトリ名に合わせて `base: '/tsumtsum-web/'` を設定しました。
-- PWA の `start_url` を相対パス（`.`）に変更し、サブディレクトリ内でも正しく動作するように調整しました。
+- `vite.config.ts` の `base` パスを `'/'`（ルート）に設定しました。
+- `public/CNAME` ファイルを作成し、ドメイン名を記述しました。
+- `README.md` 内の公開 URL を新ドメインに更新しました。
 
 ### 3. 自動デプロイの設定 (`.github/workflows/deploy.yml`)
 
-- GitHub Actions を利用した自動デプロイワークフローを作成しました。
-- `main` ブランチにプッシュすると、GitHub Pages へ自動的にビルド成果物が公開されます。
+- GitHub Actions を利用した自動デプロイワークフローを作成済みです。
+- `main` ブランチにプッシュすると、新ドメインへ自動的にデプロイされます。
 
 ---
 
 ## 公開を完了するための追加手順
 
-GitHub のリポジトリ設定で以下の操作を行ってください：
+GitHub およびドメイン管理サービスで以下の設定を行ってください：
 
-1. リポジトリの **Settings** タブを開きます。
-2. 左サイドバーের **Pages** を選択します。
-3. **Build and deployment** > **Source** で `GitHub Actions` を選択します。
-4. `main` ブランチにこの変更をプッシュすると、自動的にデプロイが開始されます。
+1. **GitHub Pages のドメイン設定**:
+   - リポジトリの **Settings** > **Pages** で **Custom domain** に `www.kuma3mccm.com` を入力して保存します。
+   - **Enforce HTTPS** にチェックを入れることを推奨します。
+
+2. **DNS の設定**:
+   - ドメイン管理サービス（お使いのレジストラなど）側で、`www` サブドメインの CNAME レコードを `takeg.github.io` に向けて設定してください。
+   - ネイキッドドメイン（`kuma3mccm.com`）の A レコードについては、GitHub の IP アドレス（ドキュメント参照）を設定することをお勧めします。
+
+3. **ビルドソースの確認**:
+   - 引き続き **Build and deployment** > **Source** で `GitHub Actions` が選択されていることを確認してください。
 
 ## 動作確認
 

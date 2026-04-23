@@ -15,4 +15,8 @@
 - [x] デプロイ自動化設定 (GitHub Actions)
   - [x] `.github/workflows/deploy.yml` の作成
 - [x] 最終確認
-  - [x] `walkthrough.md` の作成
+- [/] カスタムドメイン（www.kuma3mccm.com）対応
+  - [ ] `vite.config.ts` の `base` パスをルートに変更
+  - [ ] `public/CNAME` ファイルの作成
+  - [ ] README.md と各ドキュメントのURL更新
+  - [ ] `walkthrough.md` の更新

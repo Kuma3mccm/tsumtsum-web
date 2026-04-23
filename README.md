@@ -1,6 +1,6 @@
 # TSUM TSUM UTILITIES 📱
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://takeg.github.io/tsumtsum-web/)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://www.kuma3mccm.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-7-646CFF.svg)](https://vitejs.dev/)
@@ -64,7 +64,7 @@ npm run build
 
 ## 🌐 公開先
 
-GitHub Pages: [https://takeg.github.io/tsumtsum-web/](https://takeg.github.io/tsumtsum-web/)
+GitHub Pages: [https://www.kuma3mccm.com](https://www.kuma3mccm.com)
 
 ---
 

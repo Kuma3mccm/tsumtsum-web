@@ -15,12 +15,20 @@
   - 技術スタック（React, TypeScript, Vite, Firebase, PWAなど）
   - デプロイ済みサイトへのリンク（GitHub Pages の URL）
 
-### GitHub Pages 公開設定
+### カスタムドメインへの対応
+
+#### [MODIFY] [README.md](file:///e:/Antigravity/tsumtsum-web/README.md)
+
+- 公開URLを `https://www.kuma3mccm.com` に更新します。
 
 #### [MODIFY] [vite.config.ts](file:///e:/Antigravity/tsumtsum-web/vite.config.ts)
 
-- `base` プロパティを `'/tsumtsum-web/'` に設定します。
+- カスタムドメイン（ルート）での公開に備え、`base` プロパティを `'/'` に設定します。
 - PWA の `manifest` 内の `start_url` を調整します。
+
+#### [NEW] [CNAME](file:///e:/Antigravity/tsumtsum-web/public/CNAME)
+
+- `www.kuma3mccm.com` を記述した CNAME ファイルを `public` フォルダに作成します。
 
 #### [NEW] [deploy.yml](file:///e:/Antigravity/tsumtsum-web/.github/workflows/deploy.yml)
 
