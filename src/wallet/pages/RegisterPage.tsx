@@ -25,13 +25,21 @@ export default function RegisterPage() {
     const [success, setSuccess] = useState('');
 
     // データ読み込み
-    useEffect(() => {
+    const refreshData = useCallback(() => {
         const data = loadData();
         setAppData(data);
         if (!data) {
             setIsInitializing(true);
+        } else {
+            setIsInitializing(false);
         }
     }, []);
+
+    useEffect(() => {
+        refreshData();
+        window.addEventListener('tsumtsum-data-changed', refreshData);
+        return () => window.removeEventListener('tsumtsum-data-changed', refreshData);
+    }, [refreshData]);
 
     // 初期設定処理
     const handleInitialize = useCallback(() => {

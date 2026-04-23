@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './Layout.css';
 import SettingsPanel from './SettingsPanel';
@@ -59,6 +59,8 @@ export default function Layout() {
         };
     }, []);
 
+    const location = useLocation();
+
     return (
         <div className="layout">
             {/* Settings panel (overlay) */}
@@ -93,19 +95,21 @@ export default function Layout() {
                             ホーム
                         </NavLink>
                         <NavLink
-                            to="register"
+                            to="/wallet/register"
                             className={({ isActive }) =>
                                 `header__link ${isActive ? 'header__link--active' : ''}`
                             }
+                            reloadDocument
                         >
                             <RegisterIcon className="header__icon" />
                             登録
                         </NavLink>
                         <NavLink
-                            to="stats"
+                            to="/wallet/stats"
                             className={({ isActive }) =>
                                 `header__link ${isActive ? 'header__link--active' : ''}`
                             }
+                            reloadDocument
                         >
                             <StatsIcon className="header__icon" />
                             統計
@@ -126,7 +130,7 @@ export default function Layout() {
 
             {/* Main Content */}
             <main className="layout__main">
-                <Outlet />
+                <Outlet key={location.pathname} />
             </main>
 
             {/* Mobile Tab Bar */}
@@ -140,19 +144,21 @@ export default function Layout() {
                     <span className="tabbar__label">ホーム</span>
                 </NavLink>
                 <NavLink
-                    to="register"
+                    to="/wallet/register"
                     className={({ isActive }) =>
                         `tabbar__link ${isActive ? 'tabbar__link--active' : ''}`
                     }
+                    reloadDocument
                 >
                     <RegisterIcon className="tabbar__icon" />
                     <span className="tabbar__label">登録</span>
                 </NavLink>
                 <NavLink
-                    to="stats"
+                    to="/wallet/stats"
                     className={({ isActive }) =>
                         `tabbar__link ${isActive ? 'tabbar__link--active' : ''}`
                     }
+                    reloadDocument
                 >
                     <StatsIcon className="tabbar__icon" />
                     <span className="tabbar__label">統計</span>
